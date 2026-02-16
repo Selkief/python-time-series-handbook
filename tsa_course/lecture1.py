@@ -23,7 +23,7 @@ def fft_analysis(signal):
     # Linear detrending
     slope, intercept = np.polyfit(np.arange(len(signal)), signal, 1)
     trend = np.arange(len(signal)) * slope + intercept 
-    detrended = signal - trend 
+    detrended = signal - trend
     
     fft_values = fft(detrended)
     frequencies = np.fft.fftfreq(len(fft_values))
